@@ -6,17 +6,17 @@ $(document).ready(function() {
   $('#nameSearch').click(function() {
     event.preventDefault();
     let name = $('#name').val();
-    // $('#symptom').val("");
+    let newSearchName = promise(name);
 
 $(document).ready(function() {
   $('#symptomSearch').click(function() {
     event.preventDefault();
-    let symptom = ('#symptom').val();
+    let symptom = ('#symptomSearch').val();
     // $('#name').val("");
 
     $('#result').empty();
 
-    let newSearch = promise();
+    let newSearch = promise(symptom);
 
     newSearch.then(function(response){
 
@@ -30,12 +30,10 @@ $(document).ready(function() {
         let practices = body.data[i].practices;
         let category = body.data[i].category;
         //JSON Values
-        let first_name = profile.first_name;
         let last_name = profile.last_name;
 
 
-        $('#result').append(`First name: ${first_name}
-          Last name: ${last_name}`);
+        $('#result').append(`Last name: ${last_name}`);
 
         $('#result').append(`Doctors in PDX: ${profile}`);
 
