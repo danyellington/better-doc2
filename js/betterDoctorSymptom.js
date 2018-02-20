@@ -1,6 +1,6 @@
 
 import apiKey from './../.env';
-export let promise = function(symptoms) {
+export let promiseSymptom = function(symptoms) {
   return new Promise(function(resolve, reject) {
     let request = new XMLHttpRequest();
     let url = `https://api.betterdoctor.com/2016-03-01/conditions?user_key=${apiKey}`;
